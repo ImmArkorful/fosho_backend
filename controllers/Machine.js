@@ -39,5 +39,6 @@ exports.changeMachineStatus = async (req, res) => {
 
   res.send({
     machine,
+    history,
   });
 };
