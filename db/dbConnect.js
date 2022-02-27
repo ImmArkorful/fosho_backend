@@ -3,9 +3,6 @@ const Machine = require("../models/Machine");
 const dbConfig = require("./db.config");
 const db = require("./index");
 
-("mongodb+srv://${dbConfig.user}:${dbConfig.password}@cluster0.lhiwr.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority");
-console.log(process.env);
-
 db.mongoose
   .connect(
     `mongodb+srv://${dbConfig.user}:${dbConfig.password}@cluster0.lhiwr.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority`,

@@ -36,4 +36,8 @@ exports.changeMachineStatus = async (req, res) => {
   await History(history).save();
 
   await machine.save();
+
+  res.send({
+    machine,
+  });
 };
