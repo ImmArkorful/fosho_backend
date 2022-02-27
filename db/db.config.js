@@ -1,5 +1,7 @@
+require("dotenv").config();
+
 module.exports = {
-    HOST: "localhost",
-    PORT: 27017,
-    DB: "fo_sho"
-  };
+  user: "ImmArkorful",
+  password: process.env.MONGODB_PASSWORD,
+  DB: "fo_sho",
+};

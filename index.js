@@ -1,9 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+
 const app = express();
 require("./db/dbConnect");
+
 const MachineRoute = require("./routes/Machine");
-var bodyParser = require("body-parser");
+
+require("dotenv").config();
+
 //To close off requests from unintended hosts
 // var corsOptions = {
 //   origin: "http://localhost:8081"

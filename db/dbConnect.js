@@ -3,11 +3,17 @@ const Machine = require("../models/Machine");
 const dbConfig = require("./db.config");
 const db = require("./index");
 
+("mongodb+srv://${dbConfig.user}:${dbConfig.password}@cluster0.lhiwr.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority");
+console.log(process.env);
+
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    `mongodb+srv://${dbConfig.user}:${dbConfig.password}@cluster0.lhiwr.mongodb.net/${dbConfig.DB}?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initialPush();
