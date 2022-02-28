@@ -42,3 +42,18 @@ exports.changeMachineStatus = async (req, res) => {
     history,
   });
 };
+
+exports.getHistoryWithLimit = async (req, res) => {
+  const { limit } = req.params;
+
+  const histories = await History.find().sort({ date: -1 }).limit(limit);
+
+  res.send(histories);
+};
+
+exports.getMachineStatuses = async (req, res) => {
+  
+  const machines = await Machine.find();
+
+  res.send(machines);
+};
